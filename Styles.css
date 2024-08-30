@@ -1,0 +1,132 @@
+body{
+    height: 100%;
+    color: black;
+}
+
+#header-image-navigation
+{
+    display: grid;
+    grid-template-rows: 100px 350px;
+    background-color: rgb(241, 235, 236);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#header-navigation
+{
+    border: 1px solid;
+    display:Grid;
+    margin-left: 50px;
+    margin-right: 50px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 100px;
+    font-family: Arial, Helvetica, sans-serif;    
+}
+
+.navigation
+{
+    display: flex;
+    justify-content: right;
+    align-items:end;
+}
+
+.navigation:hover
+{
+    cursor: pointer;
+}
+.navigationlist
+{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    list-style-type: none;
+    font-size: 17px;
+}
+
+.navigationlist > li{
+    margin-right: 30px;
+}
+
+#Hireme-button
+{
+    display: flex;
+    justify-content: center;
+    align-items:last baseline;
+    padding-bottom: 20px;
+    position: relative;
+    top: 10px;
+}
+
+#HiremeButton
+{
+    height: 50px;
+    width: 100px;
+    background-color: rgb(238, 92, 39);
+    border-radius: 10px;
+    border:0px;
+    color: white;
+    font-size: 15px;
+}
+
+#HiremeButton:hover
+{
+    background-color: rgb(186, 55, 7);
+    cursor: pointer;
+}
+
+#header-image-parent
+{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+}
+
+#header-Image {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content:center;
+    padding-left: 50px;
+}
+
+#header-Image img
+{
+   height: 50px;
+   width: 50px;
+}
+
+#header-title-Description-div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#header-Description
+{
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    justify-content: start;
+    position: relative;
+    top: 20px;
+    padding: 20px;
+}
+
+#Designation-Heading
+{
+    text-wrap: balance;
+    font-size: 40px;
+}
+
+#header-about-me
+{
+    align-items: center;
+    position: relative;
+    top: -30px;
+    margin-left: 20px;
+    text-wrap: wrap;
+    font-size: 20px;
+}
