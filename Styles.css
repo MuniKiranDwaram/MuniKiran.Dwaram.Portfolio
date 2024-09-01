@@ -16,7 +16,7 @@
 {
     --bg-color:#191f36;
     --text-color:#fff;
-    --snd-bf-color:#262B40;
+    --snd-bg-color:#262B40;
     --main-color:#59B2F4;
 }
 
@@ -32,6 +32,7 @@ body{
 
 .header
 {
+    z-index: 100;
     width: 100%;
     position: fixed;
     top: 0;
@@ -51,10 +52,149 @@ body{
     font-size: 1.5rem;
 }
 
-.BarIcon
+a :hover
+{
+    color: red;
+    cursor: pointer;
+}
+
+#BarIcon
 {
     font-size: 2.5rem;
     cursor: default;
     font-weight: 700;
+    color: var(--text-color);
+}
+
+.home
+{
+    padding: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.Content socialmedia h3
+{
+    font-weight: 700;
+    color: var(--snd-bf-color);
+    font-size: 2.5rem;
+}
+
+.Content socialmedia h1{
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.3;
+}
+
+.Content socialmedia h3:nth-of-type(2)
+{
+    margin-bottom: 2rem;
+}
+
+.Content socialmedia p{
+    color: var(--text-color);
+    text-wrap: nowrap;
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0); /* Start position */
+    }
+    50% {
+        transform: translateY(-20px); /* Middle position */
+    }
+    100% {
+        transform: translateY(0); /* End position */
+    }
+}
+
+#Home-profile-image img
+{
+    margin-left: 10rem;
+    width: 25rem;
+    height: 30rem;
+    animation:floatImage 4s ease-in-out infinite;
+    border-radius: 50%;
+}
+
+.socialmedia a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    background: transparent;
+    border:solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .4s ease;
+}
+
+.socialmedia a:hover
+{
+    background:var(--main-color);
+    color: var(--snd-bg-color);
+}
+
+#btn
+{
+    padding: auto;
+    background: var(--main-color);
+    border-radius: 2rem;
+    width: 10rem;
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    font-weight: 700;
+    transition: .5s ease;
+}
+
+#btn:hover
+{
+    box-shadow: none;
+    color: var(--text-color);
+}
+
+
+/* About Section Styles */
+#about
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+}
+
+#about div img{
+    border: 4px solid var(--main-color);
+    border-radius: 4rem;
+    margin: 2rem;
+    width: 20rem;
+}
+
+#about-info p{
+    font-weight: 400;
+    text-align: justify;
+    font-size: 1.5rem;
+}
+
+#about-info h2
+{
+    font-weight: 500;
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+#about-info > h2 > span
+{
+    color: var(--main-color);
+}
+
+#about-info > h3{
+    font-weight: 700;
+    font-size: 2.5rem;
     color: var(--text-color);
 }
