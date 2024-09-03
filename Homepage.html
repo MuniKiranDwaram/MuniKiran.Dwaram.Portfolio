@@ -6,6 +6,16 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="Styles.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+           emailjs.init({
+             publicKey: "YOUR_PUBLIC_KEY",
+           });
+        })();
+     </script>
 </head>
 <body>
 
@@ -43,7 +53,7 @@
                 <a href="#Whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
 
-            <a id="btn" href="#downloadCVhere">Download My CV</a>
+            <a id="btn" href="Resume/Muni Kiran Reddy D .net developer.pdf" download="Muni Kiran Reddy D .net developer.pdf">Download My CV</a>
         </div>
 
         <div id="Home-profile-image">
@@ -89,7 +99,7 @@
      <!-- Contact section  -->
       <section class="contact" id="contact">
         <h2 class="contactheading" id="contactheading">Contact <span>Me</span></h2>
-        <form action="#">
+        <form action="#" id="contact-form">
             <div id="NameEmail">
                 <input type="text" id="Name" placeholder="Full Name">
                 <input type="email" id="EmailAddress" placeholder="Email Address">
@@ -110,4 +120,21 @@
         <h1>Yet To Update the Portfolio Projects</h1>
     </section>
 </body>
+
+<script>
+    emailjs.init("7w4zna47GmyYCYnBx");
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Send form data using EmailJS
+            emailjs.sendForm('service_cg11tt8', 'template_221dwgo', this)
+                .then(function(response) {
+                    alert('Message sent successfully!');
+                    // Optionally, clear the form or provide user feedback here
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    alert('Failed to send message: ' + JSON.stringify(error));
+                });
+        });
+</script>
 </html>
