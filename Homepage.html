@@ -22,16 +22,17 @@
     <!-- Header Navigation -->
     <header class="header">
 
+        <h1 id="Portfolio-header">Portfolio</h1>
         <!-- menu BarIcon -->
         <i class="fa-solid fa-bars" id="BarIcon"></i>
 
         <!-- navigation part -->
         <nav id="HeaderNav">
-            <a href="#home" class="active">Home</a>
-            <a href="#about" class="about">About</a>
-            <a href="#Services" class="Services">Services</a>
-            <a href="#portfolio" class="portfolio">Portfolio</a>
-            <a href="#contact" class="contact">Contact</a>
+            <a href="#home" class="active" id="NavigationItem">Home</a>
+            <a href="#about" class="about" id="NavigationItem">About</a>
+            <a href="#Services" class="Services" id="NavigationItem">Services</a>
+            <a href="#portfolio" class="portfolio" id="NavigationItem">Portfolio</a>
+            <a href="#contact" class="contact" id="NavigationItem">Contact</a>
         </nav>
     </header>
 
@@ -48,9 +49,9 @@
             </div>
     
             <div class="socialmedia">
-                <a href="#Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#Whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/muni-kiran-reddy-dwaram-42250b173/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/accounts/login/?next=%2Faccounts%2Fsignup%2F&source=desktop_nav"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/+916382188158"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
 
             <a id="btn" href="Resume/Muni Kiran Reddy D .net developer.pdf" download="Muni Kiran Reddy D .net developer.pdf">Download My CV</a>
@@ -101,31 +102,41 @@
         <h2 class="contactheading" id="contactheading">Contact <span>Me</span></h2>
         <form action="#" id="contact-form">
             <div id="NameEmail">
-                <input type="text" id="Name" placeholder="Full Name">
-                <input type="email" id="EmailAddress" placeholder="Email Address">
+                <input type="text" name="user_name" id="Name" placeholder="Full Name">
+                <input type="email" name="user_email" id="EmailAddress" placeholder="Email Address">
             </div>
 
             <div id="MobileEmailSubject">
-                <input type="text" id="Mobile-number" placeholder="Mobile number">
-                <input type="text" id="Email-subject" placeholder="Email Subject">
+                <input type="text" id="Mobile-number" name="contact_number" placeholder="Mobile number">
+                <input type="text" id="Email-subject" name="email_subject" placeholder="Email Subject">
             </div>
-            <textarea type="text" id="MessageBox" cols="30" rows="10" placeholder="Your message"></textarea>
+            <textarea type="text" id="MessageBox" name="message" cols="30" rows="10" placeholder="Your message"></textarea>
             <input type="Submit" id="contact-submit">
         </form>
       </section>
-
-
-    <!-- Portfolio-section -->
-    <section id="portfolio" class="portfolio">
-        <h1>Yet To Update the Portfolio Projects</h1>
-    </section>
 </body>
 
 <script>
     emailjs.init("7w4zna47GmyYCYnBx");
     document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the default form submission
-            
+        
+        // Retrieve form values
+        const name = document.getElementById('Name').value;
+        const email = document.getElementById('EmailAddress').value;
+        const mobile = document.getElementById('Mobile-number').value;
+        const subject = document.getElementById('Email-subject').value;
+        const message = document.getElementById('MessageBox').value;
+
+
+        // Create a template parameters object
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            mobile: mobile,
+            subject: subject,
+            message: message
+        };
             // Send form data using EmailJS
             emailjs.sendForm('service_cg11tt8', 'template_221dwgo', this)
                 .then(function(response) {
@@ -136,5 +147,33 @@
                     alert('Failed to send message: ' + JSON.stringify(error));
                 });
         });
+
+        document.addEventListener('DOMContentLoaded',function()
+    {
+        const barIcon=document.getElementById("BarIcon");
+        const headerNav = document.getElementById("HeaderNav");
+        barIcon.addEventListener('click',function()
+        {
+            if (headerNav.style.display === "block") 
+            {
+                headerNav.style.display = "none";
+            } 
+            else 
+            {
+                headerNav.style.display = "block";
+                barIcon.style.display ="none";
+                headerNav.style.padding = "0px";
+                headerNav.style.margin ="0px";
+            }
+
+        document.addEventListener('click', function(event) {
+            if (event.target !== barIcon && !headerNav.contains(event.target)) {
+                headerNav.style.display = 'none';
+                barIcon.style.display="block";
+       
+            }
+        });
+        });
+    });
 </script>
 </html>

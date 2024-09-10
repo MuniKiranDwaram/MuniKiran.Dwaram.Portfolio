@@ -30,6 +30,14 @@ body{
     color: var(--text-color);
 }
 
+
+#Portfolio-header
+{
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
 .header
 {
     z-index: 100;
@@ -44,11 +52,17 @@ body{
     align-items: center;
 }
 
+
+#HeaderNav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #HeaderNav a
 {
     font-weight: 700;
     color: var(--text-color);
-    margin-left: 4rem;
+    margin-left: 2rem;
     font-size: 1.5rem;
 }
 
@@ -60,6 +74,8 @@ a :hover
 
 #BarIcon
 {
+    display: none;
+    cursor: pointer;
     font-size: 2.5rem;
     cursor: default;
     font-weight: 700;
@@ -343,4 +359,26 @@ a :hover
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 .5rem var(--main-color);
+}
+
+
+
+/* Media query for smaller screens */
+@media (max-width: 800px) 
+{
+    #HeaderNav
+    {
+        display: none;
+        flex-wrap: nowrap;
+    }
+    
+    #BarIcon
+    {
+        display: block;
+    }
+
+    #HeaderNav a
+    {
+        font-size: 1.2rem;
+    }
 }
