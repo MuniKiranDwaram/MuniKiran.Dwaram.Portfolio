@@ -91,6 +91,33 @@ a :hover
     margin: auto;
 }
 
+@media (max-width: 800px) 
+{
+    .home{
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;}
+
+    #Home-profile-image
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #Home-profile-image img
+    {
+        margin-left: 2rem;
+        width: 20rem;
+        height: 25rem;
+        animation:floatImage 4s ease-in-out infinite;
+        border-radius: 50%;
+    }
+}
+
 .Content socialmedia h3
 {
     font-weight: 700;
@@ -134,6 +161,26 @@ a :hover
     height: 30rem;
     animation:floatImage 4s ease-in-out infinite;
     border-radius: 50%;
+}
+
+@media (max-width: 800px) 
+{
+
+    #Home-profile-image
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #Home-profile-image img
+    {
+        margin: auto;
+        width: 20rem;
+        height: 25rem;
+        animation:floatImage 4s ease-in-out infinite;
+        border-radius: 50%;
+    }
 }
 
 .socialmedia a{
@@ -312,6 +359,7 @@ a :hover
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 0px;
 }
 
 #contact > form
@@ -361,6 +409,21 @@ a :hover
     box-shadow: 0 0 .5rem var(--main-color);
 }
 
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color:var(--snd-bg-color);
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 20px 0;
+}
+#Copyright-image
+{
+    color: var(--text-color);
+}
 
 
 /* Media query for smaller screens */
@@ -380,5 +443,81 @@ a :hover
     #HeaderNav a
     {
         font-size: 1.2rem;
+    }
+
+    #contact-form
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #contact
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0px;
+    }
+    #MessageBox
+    {
+        width: 100%;
+    }
+
+    #contact-submit
+    {
+        width: 100%;
+    }
+
+    #NameEmail
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #MobileEmailSubject
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #NameEmail input
+    {
+        width: 100%;
+    }
+
+    #MobileEmailSubject input
+    {
+        width: 100%;
+    }
+
+    #Services
+    {
+        flex-direction: column;
+    }
+
+    #Service-Descriptions
+    {
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+    #about
+    {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .profile-pic
+    {
+        display: none;
     }
 }
