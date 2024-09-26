@@ -23,8 +23,6 @@
     <header class="header">
 
         <h1 id="Portfolio-header">Portfolio</h1>
-        <!-- menu BarIcon -->
-        <i class="fa-solid fa-bars" id="BarIcon"></i>
 
         <!-- navigation part -->
         <nav id="HeaderNav">
@@ -155,30 +153,7 @@
 
         document.addEventListener('DOMContentLoaded',function()
     {
-        const barIcon=document.getElementById("BarIcon");
         const headerNav = document.getElementById("HeaderNav");
-        barIcon.addEventListener('click',function()
-        {
-            if (headerNav.style.display === "block") 
-            {
-                headerNav.style.display = "none";
-            } 
-            else 
-            {
-                headerNav.style.display = "block";
-                barIcon.style.display ="none";
-                headerNav.style.padding = "0px";
-                headerNav.style.margin ="0px";
-            }
-
-        document.addEventListener('click', function(event) {
-            if (event.target !== barIcon && !headerNav.contains(event.target)) {
-                headerNav.style.display = 'none';
-                barIcon.style.display="block";
-       
-            }
-        });
-        });
     });
 </script>
 </html>

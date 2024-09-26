@@ -72,16 +72,6 @@ a :hover
     cursor: pointer;
 }
 
-#BarIcon
-{
-    display: none;
-    cursor: pointer;
-    font-size: 2.5rem;
-    cursor: default;
-    font-weight: 700;
-    color: var(--text-color);
-}
-
 .home
 {
     padding: 10rem;
@@ -429,17 +419,6 @@ hr {
 /* Media query for smaller screens */
 @media (max-width: 800px) 
 {
-    #HeaderNav
-    {
-        display: none;
-        flex-wrap: nowrap;
-    }
-    
-    #BarIcon
-    {
-        display: block;
-    }
-
     #HeaderNav a
     {
         font-size: 1.2rem;
@@ -519,5 +498,18 @@ hr {
     .profile-pic
     {
         display: none;
+    }
+}
+
+@media (max-width: 700px) 
+{
+    .header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #home
+    {
+        margin-top: 50px;
     }
 }
