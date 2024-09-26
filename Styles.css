@@ -513,3 +513,20 @@ hr {
         margin-top: 50px;
     }
 }
+
+@media (max-width: 600px) {
+    #HeaderNav {
+        overflow-x: auto;          /* Allow horizontal scrolling if needed */
+    }
+
+    #HeaderNav a
+    {
+        margin: 5px;
+        font-size: 0.8rem;
+    }
+
+    .socialmedia a{
+        height: 2rem;
+        width: 2rem;
+    }
+}
